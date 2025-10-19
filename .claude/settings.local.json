@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat \"d:\\Open\\OpenHomepage\\server\\db\\data.json\")",
+      "Bash(npm install --save-dev @types/node)",
+      "Bash(mkdir -p server/api/widgets)",
+      "Bash(mv server/api/portainer.ts server/api/widgets/portainer.ts)",
+      "Bash(mv server/api/uptime-kuma.ts server/api/widgets/uptime-kuma.ts)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

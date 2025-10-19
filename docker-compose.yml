@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  openhomepage:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: openhomepage
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
+    volumes:
+      - ./server/db:/app/server/db
+    networks:
+      - openhomepage-network
+
+networks:
+  openhomepage-network:
+    driver: bridge
