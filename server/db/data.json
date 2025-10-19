@@ -1,7 +1,6 @@
 {
   "settings": {
-    "title": "Ma Page d'Accueil",
-    "adminPassword": "admin"
+    "title": "Ma Page d'Accueil"
   },
   "sections": [
     {

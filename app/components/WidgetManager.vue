@@ -103,11 +103,11 @@ const newWidget = ref<{ name: string; props: Record<string, any> }>({
 });
 
 const availableWidgets = [
-  {
-    name: "ClockWidget",
-    label: "Horloge",
-    props: [],
-  },
+  // {
+  //   name: "ClockWidget",
+  //   label: "Horloge",
+  //   props: [],
+  // },
   {
     name: "WeatherWidget",
     label: "Météo",
@@ -129,16 +129,16 @@ const availableWidgets = [
       { key: "author", label: "Auteur", placeholder: "Gandhi" },
     ],
   },
-  {
-    name: "StatsWidget",
-    label: "Statistiques",
-    props: [
-      { key: "label", label: "Label", placeholder: "Total" },
-      { key: "value", label: "Valeur", placeholder: "1,234" },
-      { key: "subtitle", label: "Sous-titre", placeholder: "Cette semaine" },
-      { key: "icon", label: "Icône", placeholder: "i-lucide:trending-up" },
-    ],
-  },
+  // {
+  //   name: "StatsWidget",
+  //   label: "Statistiques",
+  //   props: [
+  //     { key: "label", label: "Label", placeholder: "Total" },
+  //     { key: "value", label: "Valeur", placeholder: "1,234" },
+  //     { key: "subtitle", label: "Sous-titre", placeholder: "Cette semaine" },
+  //     { key: "icon", label: "Icône", placeholder: "i-lucide:trending-up" },
+  //   ],
+  // },
   {
     name: "PingerWidget",
     label: "Pinger",
@@ -175,28 +175,28 @@ const availableWidgets = [
       { key: "interval", label: "Intervalle (secondes)", placeholder: "30" },
     ],
   },
-  {
-    name: "ExampleWidget",
-    label: "Exemple",
-    props: [{ key: "text", label: "Texte", placeholder: "Votre texte..." }],
-  },
-  {
-    name: "CustomWidget",
-    label: "Widget Personnalisé",
-    props: [
-      { key: "title", label: "Titre", placeholder: "Mon Widget" },
-      { key: "subtitle", label: "Sous-titre", placeholder: "Description..." },
-      { key: "icon", label: "Icône", placeholder: "i-lucide:box" },
-      { key: "badge", label: "Badge", placeholder: "Actif" },
-      { key: "status", label: "Statut (success/error/warning/info/neutral)", placeholder: "success" },
-      { key: "color", label: "Couleur (primary/green/red/orange/blue/yellow/purple/gray)", placeholder: "" },
-      { key: "value", label: "Valeur principale", placeholder: "99.9%" },
-      { key: "valueLabel", label: "Label de la valeur", placeholder: "Disponibilité" },
-      { key: "showPulse", label: "Afficher pulsation (true/false)", placeholder: "false" },
-      { key: "footerText", label: "Texte du footer", placeholder: "Mis à jour il y a 5min" },
-      { key: "showRefreshButton", label: "Bouton refresh (true/false)", placeholder: "false" },
-    ],
-  },
+  // {
+  //   name: "ExampleWidget",
+  //   label: "Exemple",
+  //   props: [{ key: "text", label: "Texte", placeholder: "Votre texte..." }],
+  // },
+  // {
+  //   name: "CustomWidget",
+  //   label: "Widget Personnalisé",
+  //   props: [
+  //     { key: "title", label: "Titre", placeholder: "Mon Widget" },
+  //     { key: "subtitle", label: "Sous-titre", placeholder: "Description..." },
+  //     { key: "icon", label: "Icône", placeholder: "i-lucide:box" },
+  //     { key: "badge", label: "Badge", placeholder: "Actif" },
+  //     { key: "status", label: "Statut (success/error/warning/info/neutral)", placeholder: "success" },
+  //     { key: "color", label: "Couleur (primary/green/red/orange/blue/yellow/purple/gray)", placeholder: "" },
+  //     { key: "value", label: "Valeur principale", placeholder: "99.9%" },
+  //     { key: "valueLabel", label: "Label de la valeur", placeholder: "Disponibilité" },
+  //     { key: "showPulse", label: "Afficher pulsation (true/false)", placeholder: "false" },
+  //     { key: "footerText", label: "Texte du footer", placeholder: "Mis à jour il y a 5min" },
+  //     { key: "showRefreshButton", label: "Bouton refresh (true/false)", placeholder: "false" },
+  //   ],
+  // },
 ];
 
 onMounted(async () => {
