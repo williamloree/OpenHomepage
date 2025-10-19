@@ -42,13 +42,6 @@ export default defineEventHandler(async (event) => {
       data
     }
   } catch (error: any) {
-    console.error('Erreur Uptime Kuma API:', {
-      url: fullUrl,
-      status: error.statusCode,
-      message: error.message,
-      data: error.data
-    })
-
     throw createError({
       statusCode: error.statusCode || 500,
       statusMessage: error.data?.message || error.message || 'Erreur lors de la communication avec Uptime Kuma'

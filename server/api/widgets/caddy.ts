@@ -10,7 +10,6 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  // Construire l'URL complète
   const fullUrl = `${apiUrl}${endpoint}`
 
   try {
@@ -26,8 +25,6 @@ export default defineEventHandler(async (event) => {
       data: response
     }
   } catch (error: any) {
-    console.error('Erreur lors de la récupération des données Caddy:', error)
-    
     throw createError({
       statusCode: error.statusCode || 500,
       statusMessage: error.message || 'Erreur lors de la communication avec Caddy'

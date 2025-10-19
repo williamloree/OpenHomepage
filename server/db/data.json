@@ -37,48 +37,6 @@
         }
       ],
       "widgets": []
-    },
-    {
-      "id": "0226b866-7465-4fe7-8e0d-55a22eb3b0de",
-      "title": "Test 2",
-      "links": [
-        {
-          "id": "2e649b39-2b16-4eed-adfa-afefc6aaaa93",
-          "label": "google.fr",
-          "url": "google.fr",
-          "icon": "i-lucide:search"
-        }
-      ],
-      "widgets": [],
-      "icon": "i-lucide:thumbs-up"
-    },
-    {
-      "id": "8a67d772-7504-4070-8928-022023aaabc2",
-      "title": "Favoris",
-      "icon": "i-lucide:heart",
-      "links": [
-        {
-          "id": "35af54b9-a5a9-4a26-84fb-e6ecaae78455",
-          "label": "google.fr",
-          "url": "google.fr",
-          "icon": "i-lucide:heart"
-        }
-      ],
-      "widgets": []
-    },
-    {
-      "id": "dd42dcc2-3f84-4c40-82fc-2b3e8cb3f185",
-      "title": "test",
-      "icon": "i-lucide:thumbs-up",
-      "links": [
-        {
-          "id": "023f13bf-3572-480c-b8ce-723280b3a8c5",
-          "label": "google",
-          "url": "google.fr",
-          "icon": "i-lucide:search"
-        }
-      ],
-      "widgets": []
     }
   ]
 }

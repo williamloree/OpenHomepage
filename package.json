@@ -1,7 +1,28 @@
 {
   "name": "open-homepage",
+  "version": "1.0.0",
+  "description": "A customizable, self-hosted homepage dashboard built with Nuxt 4 and Vue 3",
   "type": "module",
-  "private": true,
+  "private": false,
+  "author": "OpenHomepage Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/williamloree/OpenHomepage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/williamloree/OpenHomepage/issues"
+  },
+  "homepage": "https://github.com/williamloree/OpenHomepage#readme",
+  "keywords": [
+    "homepage",
+    "dashboard",
+    "self-hosted",
+    "nuxt",
+    "vue",
+    "widgets",
+    "customizable"
+  ],
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",

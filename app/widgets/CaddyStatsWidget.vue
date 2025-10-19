@@ -12,7 +12,6 @@
       </div>
       <UButton
         size="xs"
-        color="white"
         variant="ghost"
         icon="i-heroicons-arrow-path"
         @click="fetchStats"
@@ -42,24 +41,6 @@
           <div class="text-xs opacity-90 mt-1">Routes</div>
         </div>
       </div>
-
-      <!-- <div v-if="stats.upstreams > 0" class="pt-4 border-t border-white/20">
-        <div class="flex justify-between items-center text-sm">
-          <span class="opacity-90">Santé des upstreams</span>
-          <span class="font-semibold">{{ healthPercentage }}%</span>
-        </div>
-        <div class="mt-2 w-full bg-white/20 rounded-full h-2">
-          <div
-            class="bg-green-400 rounded-full h-2 transition-all duration-500"
-            :style="{ width: `${healthPercentage}%` }"
-          />
-        </div>
-      </div> -->
-
-      <!-- <div class="flex items-center justify-center gap-2">
-        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-        <span class="text-sm opacity-90">Serveur en ligne</span>
-      </div> -->
     </div>
 
     <div class="mt-4 text-xs opacity-75">
@@ -122,7 +103,6 @@ const fetchStats = async () => {
   error.value = "";
 
   try {
-    // Récupérer les upstreams
     const upstreamsResponse = await $fetch("/api/widgets/caddy", {
       method: "POST",
       body: {
@@ -141,7 +121,6 @@ const fetchStats = async () => {
       ).length;
     }
 
-    // Récupérer la config pour les routes
     const configResponse = await $fetch("/api/widgets/caddy", {
       method: "POST",
       body: {
@@ -171,7 +150,6 @@ const fetchStats = async () => {
     lastUpdate.value = new Date();
   } catch (e: any) {
     error.value = `Impossible de se connecter à Caddy. Vérifiez que l'API admin est accessible sur ${props.apiUrl}`;
-    console.error("Caddy API error:", e);
   } finally {
     loading.value = false;
   }

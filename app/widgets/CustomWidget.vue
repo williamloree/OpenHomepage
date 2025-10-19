@@ -47,7 +47,6 @@
       <!-- Message d'erreur -->
       <UAlert
         v-if="errorMessage"
-        color="red"
         variant="soft"
         :title="errorMessage"
         icon="i-lucide:alert-circle"
@@ -62,7 +61,6 @@
           <UButton
             v-if="computedShowRefreshButton"
             size="xs"
-            color="gray"
             variant="ghost"
             icon="i-lucide:refresh-cw"
             @click="$emit('refresh')"
@@ -220,10 +218,10 @@ const cardStyle = computed(() => {
 })
 
 const badgeColor = computed(() => {
-  if (props.status === 'success') return 'green'
-  if (props.status === 'error') return 'red'
-  if (props.status === 'warning') return 'orange'
-  if (props.status === 'info') return 'blue'
-  return 'gray'
+  if (props.status === 'success') return 'success'
+  if (props.status === 'error') return 'error'
+  if (props.status === 'warning') return 'warning'
+  if (props.status === 'info') return 'info'
+  return 'primary'
 })
 </script>

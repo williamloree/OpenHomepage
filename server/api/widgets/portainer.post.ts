@@ -18,19 +18,16 @@ export default defineEventHandler(async (event) => {
       'Accept': 'application/json'
     }
 
-    // Portainer utilise X-API-Key pour les access tokens
     if (apiToken) {
       headers['X-API-Key'] = apiToken
     }
 
-    // Créer un dispatcher undici qui ignore les certificats auto-signés
     const dispatcher = new Agent({
       connect: {
         rejectUnauthorized: false
       }
     })
 
-    // Utiliser undici fetch avec le dispatcher
     const response = await undiciFetch(fullUrl, {
       method: 'GET',
       headers,
@@ -49,13 +46,6 @@ export default defineEventHandler(async (event) => {
       data
     }
   } catch (error: any) {
-    console.error('Erreur Portainer API:', {
-      url: fullUrl,
-      status: error.statusCode,
-      message: error.message,
-      data: error.data
-    })
-
     throw createError({
       statusCode: error.statusCode || 500,
       statusMessage: error.data?.message || error.message || 'Erreur lors de la communication avec Portainer'

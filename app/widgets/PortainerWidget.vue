@@ -37,35 +37,16 @@
         <div class="text-center">
           <div class="text-3xl font-bold">{{ stats.running }}</div>
           <div class="text-xs opacity-90 mt-1">Running</div>
-          <!-- <div class="mt-1">
-            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse mx-auto" />
-          </div> -->
         </div>
         <div class="text-center">
           <div class="text-3xl font-bold">{{ stats.stopped }}</div>
           <div class="text-xs opacity-90 mt-1">Stopped</div>
-          <!-- <div class="mt-1">
-            <div class="w-2 h-2 bg-gray-300 rounded-full mx-auto" />
-          </div> -->
         </div>
         <div class="text-center">
           <div class="text-3xl font-bold">{{ stats.total }}</div>
           <div class="text-xs opacity-90 mt-1">Total</div>
         </div>
       </div>
-
-      <!-- <div v-if="stats.total > 0" class="pt-4 border-t border-white/20">
-        <div class="flex justify-between items-center text-sm mb-2">
-          <span class="opacity-90">Conteneurs actifs</span>
-          <span class="font-semibold">{{ runningPercentage }}%</span>
-        </div>
-        <div class="w-full bg-white/20 rounded-full h-2">
-          <div
-            class="bg-green-400 rounded-full h-2 transition-all duration-500"
-            :style="{ width: `${runningPercentage}%` }"
-          />
-        </div>
-      </div> -->
     </div>
 
     <div class="mt-4 text-xs opacity-75">
@@ -129,13 +110,6 @@ const fetchStats = async () => {
   error.value = "";
 
   try {
-    console.log("Fetching Portainer stats:", {
-      apiUrl: props.apiUrl,
-      endpointId: props.endpointId,
-      hasToken: !!props.apiToken,
-    });
-
-    // Récupérer les conteneurs via l'API Portainer
     const response = await $fetch("/api/widgets/portainer", {
       method: "POST",
       body: {
@@ -145,12 +119,9 @@ const fetchStats = async () => {
       },
     });
 
-    console.log("Portainer response:", response);
-
     if (response.success && Array.isArray(response.data)) {
       const containers = response.data;
 
-      // Compter les conteneurs par état (State peut être "running", "exited", "paused", etc.)
       const running = containers.filter(
         (c: any) => c.State === "running"
       ).length;
@@ -172,11 +143,6 @@ const fetchStats = async () => {
   } catch (e: any) {
     const errorMsg = e.data?.message || e.message || "Erreur inconnue";
     error.value = `Erreur: ${errorMsg}. Vérifiez l'URL, le token API et l'endpoint ID.`;
-    console.error("Portainer API error:", {
-      message: e.message,
-      data: e.data,
-      statusCode: e.statusCode,
-    });
   } finally {
     loading.value = false;
   }
