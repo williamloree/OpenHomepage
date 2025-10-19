@@ -10,6 +10,8 @@
   --ui-error: var(--color-error);
   --foreground: oklch(0.88 0.02 87.52);
 
+  --ui-container: var(--container-8xl);
+
   /* Light mode backgrounds */
   --ui-bg-primary: oklch(0.99 0 0);
   --ui-bg-secondary: oklch(1 0 0);
@@ -42,6 +44,7 @@
 
 /* Theme Configuration */
 @theme {
+   --container-8xl: 90rem;
   --color-background-dark: oklch(21% 0.034 264.665);
   /* Colors - Primary is now Orange */
   --color-primary-50: oklch(0.98 0.02 55);

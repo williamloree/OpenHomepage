@@ -20,35 +20,30 @@ const getWidgetComponent = (widgetName: string) => {
 </script>
 
 <template>
-  <div class="bg-gray-50 dark:bg-background-dark">
-    <h1 class="text-3xl font-bold mb-8">{{ settings?.title }}</h1>
+  <h1 class="text-3xl font-bold mb-8" v-if="settings?.title">
+    {{ settings?.title }}
+  </h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div v-for="section in sections" :key="section.id" class="space-y-4">
+      <div class="flex items-center gap-2">
+        <UIcon v-if="section.icon" :name="section.icon" class="text-2xl" />
+        <h2 class="text-xl font-semibold">{{ section.title }}</h2>
+      </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div v-for="section in sections" :key="section.id" class="space-y-4">
-        <div class="flex items-center gap-2">
-          <UIcon v-if="section.icon" :name="section.icon" class="text-2xl" />
-          <h2 class="text-xl font-semibold">{{ section.title }}</h2>
-        </div>
+      <div class="space-y-2">
+        <LinkCard v-for="link in section.links" :key="link.url" :link="link" />
+      </div>
 
-        <div class="space-y-2">
-          <LinkCard
-            v-for="link in section.links"
-            :key="link.url"
-            :link="link"
-          />
-        </div>
-
-        <div
-          v-if="section.widgets && section.widgets.length > 0"
-          class="space-y-2"
-        >
-          <component
-            v-for="widget in section.widgets"
-            :key="widget.id"
-            :is="getWidgetComponent(widget.name)"
-            v-bind="widget.props || {}"
-          />
-        </div>
+      <div
+        v-if="section.widgets && section.widgets.length > 0"
+        class="space-y-2"
+      >
+        <component
+          v-for="widget in section.widgets"
+          :key="widget.id"
+          :is="getWidgetComponent(widget.name)"
+          v-bind="widget.props || {}"
+        />
       </div>
     </div>
   </div>

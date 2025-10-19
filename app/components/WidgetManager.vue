@@ -50,13 +50,9 @@
           </div>
         </div>
       </div>
-      <div v-else class="text-gray-500">Aucun widget dans cette section.</div>
-
-      <USeparator class="my-4" />
-
-      <h3 class="font-semibold mb-3">Ajouter un widget</h3>
-
+      <div v-else class="text-gray-500 mb-4">Aucun widget dans cette section.</div>
       <div class="mb-4">
+        <h3 class="font-semibold mb-3">Ajouter un widget</h3>
         <label class="block text-sm font-medium mb-2">Type de widget</label>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
           <UButton

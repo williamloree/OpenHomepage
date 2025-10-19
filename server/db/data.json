@@ -1,6 +1,8 @@
 {
   "settings": {
-    "title": "Ma Page d'Accueil"
+    "title": "Ma Page d'Accueil",
+    "background": "img/bg.png",
+    "appName": "Mon App"
   },
   "sections": [
     {

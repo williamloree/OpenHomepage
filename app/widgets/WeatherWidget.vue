@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-6 rounded-sm bg-gradient-to-br from-cyan-400 to-blue-500 text-white shadow-lg"
+    class="p-3 rounded-lg bg-gradient-to-br from-cyan-400/30 to-blue-500/30 text-white shadow-lg backdrop-blur-md border border-white/20 dark:border-gray-700/50 transition-all"
   >
     <div v-if="loading" class="text-center">
       <div class="text-lg">Chargement...</div>
@@ -12,13 +12,13 @@
       <div class="flex items-center justify-between">
         <div>
           <div class="text-2xl font-bold">{{ weatherData.city }}</div>
-          <div class="text-5xl font-bold mt-2">
+          <div class="text-5xl font-bold mt-1">
             {{ weatherData.temperature }}°C
           </div>
         </div>
         <UIcon :name="weatherData.icon" class="w-20 h-20" />
       </div>
-      <div class="mt-4 text-sm opacity-90">{{ weatherData.description }}</div>
+      <div class="mt-2 text-sm opacity-90">{{ weatherData.description }}</div>
     </div>
   </div>
 </template>

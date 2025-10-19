@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-6 rounded-sm bg-gradient-to-br from-purple-500 to-indigo-600 text-white shadow-lg"
+    class="p-3 rounded-lg bg-gradient-to-br from-purple-500/30 to-indigo-600/30 text-white shadow-lg backdrop-blur-md border border-white/20 dark:border-gray-700/50 transition-all"
   >
     <div class="flex items-center justify-between mb-4">
       <div class="flex items-center gap-3">
@@ -28,15 +28,15 @@
 
     <div v-else-if="stats" class="space-y-4">
       <div class="grid grid-cols-3 gap-4">
-        <div class="text-center">
+        <div class="text-center text-gray-900 dark:text-gray-100 bg-gray-200/80 dark:bg-gray-800/80 p-1 rounded-md">
           <div class="text-3xl font-bold">{{ stats.upstreams }}</div>
           <div class="text-xs opacity-90 mt-1">Upstreams</div>
         </div>
-        <div class="text-center">
+        <div class="text-center text-gray-900 dark:text-gray-100 bg-gray-200/80 dark:bg-gray-800/80 p-1 rounded-md">
           <div class="text-3xl font-bold">{{ stats.healthyUpstreams }}</div>
           <div class="text-xs opacity-90 mt-1">Healthy</div>
         </div>
-        <div class="text-center">
+        <div class="text-center text-gray-900 dark:text-gray-100 bg-gray-200/80 dark:bg-gray-800/80 p-1 rounded-md">
           <div class="text-3xl font-bold">{{ stats.routes }}</div>
           <div class="text-xs opacity-90 mt-1">Routes</div>
         </div>

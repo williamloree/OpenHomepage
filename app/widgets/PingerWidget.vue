@@ -1,13 +1,9 @@
 <template>
-  <div class="p-6 rounded-sm shadow-lg" :class="statusColor">
+  <div class="p-3 rounded-lg shadow-lg backdrop-blur-md border border-white/20 dark:border-gray-700/50 transition-all" :class="statusColor">
     <div class="flex items-center justify-between mb-4">
       <div class="flex items-center gap-3">
         <div class="relative">
           <UIcon :name="statusIcon" class="w-8 h-8" />
-          <div
-            v-if="isOnline"
-            class="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"
-          ></div>
         </div>
         <div>
           <div class="text-lg font-bold">{{ serviceName }}</div>
@@ -71,11 +67,11 @@ const serviceName = computed(() => props.name);
 
 const statusColor = computed(() => {
   if (isOnline.value === null) {
-    return "bg-gradient-to-br from-gray-400 to-gray-500 text-white";
+    return "bg-gradient-to-br from-gray-400/30 to-gray-500/30 text-white";
   }
   return isOnline.value
-    ? "bg-gradient-to-br from-green-400 to-emerald-500 text-white"
-    : "bg-gradient-to-br from-red-400 to-rose-500 text-white";
+    ? "bg-gradient-to-br from-green-400/30 to-emerald-500/30 text-white"
+    : "bg-gradient-to-br from-red-400/30 to-rose-500/30 text-white";
 });
 
 const statusIcon = computed(() => {
